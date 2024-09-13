@@ -18,7 +18,7 @@ return new class extends Migration
             $table->date("rental_start");
             $table->date("rental_end");
             $table->decimal("total_price");
-            $table->varchar("status");
+            $table->string("status");
             $table->timestamps();
         });
     }

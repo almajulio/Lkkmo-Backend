@@ -16,10 +16,10 @@ return new class extends Migration
             $table->string("name");
             $table->string("description");
             $table->decimal("price");
-            $table->varchar("size");
+            $table->string("size");
             $table->foreignId("category_id");
-            $table->int("stock");
-            $table->varchar("image");
+            $table->integer("stock");
+            $table->string("image");
             $table->timestamps();
         });
     }
