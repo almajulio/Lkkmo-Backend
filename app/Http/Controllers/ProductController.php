@@ -15,7 +15,7 @@ class ProductController extends Controller
     public function show($id){
         $products = Product::find($id);
         $reviews = $products->reviews;
-        return new PostResource('200', "Berhasil mengambil data produk", ['products' => $products, 'reviews' => $reviews]);
+        return new PostResource('200', "Berhasil mengambil data produk", ['products' => $products]);
     }
 
     public function store(Request $request){

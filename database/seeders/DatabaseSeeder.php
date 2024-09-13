@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Product;
+use App\Models\Review;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -24,6 +25,13 @@ class DatabaseSeeder extends Seeder
            'image' => 'image.png',
            'category_id' => 1,
            'size' => 'S',
+       ]);
+
+       Review::create([
+           'user_id' => 1,
+           'product_id' => 1,
+           'rating' => 5,
+           'comment' => 'Review 1',
        ]);
     }
 }

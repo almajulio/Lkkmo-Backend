@@ -51,4 +51,12 @@ class AuthController extends Controller
             'role_id' => 1
         ]);
     }
+
+    public function logout(){
+        Auth::logout();
+        return response()->json([
+            'status' => 200,
+            'message' => 'Logout Successfully',
+        ]);
+    }
 }

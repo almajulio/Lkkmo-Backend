@@ -17,6 +17,10 @@ class Product extends Model
         "stock",
         "image"
     ];
+
+    protected $hidden = [
+        'created_at', 'updated_at'
+    ];
     use HasFactory;
 
     public function category()

@@ -18,15 +18,15 @@ class PostResource extends JsonResource
      * @param  mixed $message
      * @return void
      */
-    public function __construct($status, $message, ...$data)
+    public function __construct($status, $message, ...$resource)
     {
-        parent::__construct($data);
+        parent::__construct($resource);
         $this->status  = $status;
         $this->message = $message;
     }
 
     /**
-     * Transform the data into an array.
+     * Transform the resource into an array.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return array
@@ -36,7 +36,7 @@ class PostResource extends JsonResource
         return [
             'status'   => $this->status,
             'message'   => $this->message,
-            'data'      => $this->data
+            'data'      => $this->resource
         ];
     }
 }

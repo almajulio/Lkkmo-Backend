@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Foreign key ke tabel users
-            $table->foreignId('product_id')->constrained()->onDelete('cascade'); // Foreign key ke tabel products
+            $table->foreignId('user_id'); // Foreign key ke tabel users
+            $table->foreignId('product_id'); // Foreign key ke tabel products
             $table->integer('rating')->unsigned()->comment('Rating produk 1-5');
             $table->text('comment')->nullable();
             $table->timestamps();
