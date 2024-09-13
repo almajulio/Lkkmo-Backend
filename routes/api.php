@@ -6,4 +6,4 @@ use App\Http\Controllers\AuthController;
 
 
 Route::apiResource('/products', \App\Http\Controllers\ProductController::class);
-
+Route::apiResource('/categories', \App\Http\Controllers\CategoryController::class);
