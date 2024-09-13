@@ -12,9 +12,10 @@ class ProductController extends Controller
         $products = Product::all();
         return new PostResource('200', "Berhasil mengambil data produk", $products);
     }
-    public function show(){
-        $products = Product::all();
-        return new PostResource('200', "Berhasil mengambil data produk", $products);
+    public function show($id){
+        $products = Product::find($id);
+        $reviews = $products->reviews;
+        return new PostResource('200', "Berhasil mengambil data produk", ['products' => $products, 'reviews' => $reviews]);
     }
 
     public function store(Request $request){
