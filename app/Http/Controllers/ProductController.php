@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\PostResource;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Validator;
 
 class ProductController extends Controller
 {
@@ -19,8 +20,8 @@ class ProductController extends Controller
     }
 
     public function store(Request $request){
-        $request -> validate([
-            'name' => 'required',
+        $validator = Validator::make($request->all(), [
+             'name' => 'required',
             'price' => 'required',
             'description' => 'required',
             'stock' => 'required',
@@ -28,6 +29,10 @@ class ProductController extends Controller
             'category_id' => 'required',
             'size' => 'required',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
 
         $product = Product::create([
             'name' => $request->name,

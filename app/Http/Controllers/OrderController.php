@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\PostResource;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use Validator;
 
 class OrderController extends Controller
 {
@@ -13,12 +14,16 @@ class OrderController extends Controller
         return new PostResource('200', "Berhasil mengambil data order", $orders);
     }
     public function store(Request $request){
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'rental_start' => 'required',
             'rental_end' => 'required',
             'total_price' => 'required',
             'status' => 'required',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
 
         Order::create([
             'user_id' => $request->user_id,

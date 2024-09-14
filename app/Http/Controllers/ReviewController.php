@@ -5,14 +5,20 @@ namespace App\Http\Controllers;
 use App\Http\Resources\PostResource;
 use App\Models\Review;
 use Illuminate\Http\Request;
+use Validator;
 
 class ReviewController extends Controller
 {
     public function store(Request $request){
-        $request->validate([
+        
+        $validator = Validator::make($request->all(), [
             'rating' => 'required',
             'comment' => 'required',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
 
         Review::create([
             'user_id' => $request->user_id,

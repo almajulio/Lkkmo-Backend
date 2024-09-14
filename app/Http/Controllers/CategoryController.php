@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\PostResource;
 use Illuminate\Http\Request;
 use App\Models\Category;
+use Validator;
 
 class CategoryController extends Controller
 {
@@ -14,10 +15,13 @@ class CategoryController extends Controller
     }
 
     public function create(Request $request){
-        $request->validate([
+         $validator = Validator::make($request->all(), [
             'name' => 'required',
         ]);
 
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
         Category::create(['name' => $request->name]);
     }
 
