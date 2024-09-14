@@ -33,5 +33,7 @@ class DatabaseSeeder extends Seeder
            'rating' => 5,
            'comment' => 'Review 1',
        ]);
+
+        $this->call(RoleSeeder::class);
     }
 }

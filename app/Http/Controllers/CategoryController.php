@@ -23,6 +23,8 @@ class CategoryController extends Controller
             return response()->json($validator->errors(), 422);
         }
         Category::create(['name' => $request->name]);
+
+        return new PostResource('200', "Berhasil Menambahkan Kategori", null);
     }
 
     public function update(Request $request, $id){
