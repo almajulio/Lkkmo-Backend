@@ -25,26 +25,27 @@ Route::middleware('auth:api')->group(function () {
 
     // Api for auth
     Route::post('/logout', [AuthController::class, 'logout']);
+
+    Route::middleware('checkRole:admin')->group(function () {
+        // Admin api for product
+        Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+        Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
+        Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
+        
+        // Admin api for category
+        Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
+        Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('categories.update');
+        Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+        
+        // Admin api for order
+        Route::post('/orders', [CategoryController::class, 'store'])->name('orders.store');
+        Route::put('/orders/{id}', [CategoryController::class, 'update'])->name('orders.update');
+        Route::delete('/orders/{id}', [CategoryController::class, 'destroy'])->name('orders.destroy');
+    });
 });
 
 
 // Api for admin
-Route::middleware('checkRole:admin')->group(function () {
-    // Admin api for product
-    Route::post('/products/{id}', [AuthController::class, 'store'])->name('products.store');
-    Route::put('/products/{id}', [AuthController::class, 'update'])->name('products.update');
-    Route::delete('/products/{id}', [AuthController::class, 'destroy'])->name('products.destroy');
-    
-    // Admin api for category
-    Route::post('/categories/{id}', [CategoryController::class, 'store'])->name('categories.store');
-    Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('categories.update');
-    Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
-    
-    // Admin api for order
-    Route::post('/orders/{id}', [CategoryController::class, 'store'])->name('orders.store');
-    Route::put('/orders/{id}', [CategoryController::class, 'update'])->name('orders.update');
-    Route::delete('/orders/{id}', [CategoryController::class, 'destroy'])->name('orders.destroy');
-});
 
 // Api for auth
 Route::post('/login', [AuthController::class, 'login']);

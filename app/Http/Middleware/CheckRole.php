@@ -20,7 +20,7 @@ class CheckRole
             return redirect()->route('login');
         }
         foreach ($roles as $role) {
-            if ($request->user()->role->role_name == $role) {
+            if ($request->user()->role->name == $role) {
                 return $next($request);
             }
         }
