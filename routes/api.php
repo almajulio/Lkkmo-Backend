@@ -8,7 +8,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 
-// Api for user
+// Api for login
 Route::middleware('auth:api')->group(function () {
     // Api for product
     Route::get('/products', [ProductController::class, 'index'])->name('products.index');
@@ -27,6 +27,7 @@ Route::middleware('auth:api')->group(function () {
     // Api for auth
     Route::post('/logout', [AuthController::class, 'logout']);
 
+    // Api for admin
     Route::middleware('checkRole:admin')->group(function () {
         // Admin api for product
         Route::post('/products', [ProductController::class, 'store'])->name('products.store');
@@ -46,7 +47,6 @@ Route::middleware('auth:api')->group(function () {
 });
 
 
-// Api for admin
 
 // Api for auth
 Route::post('/login', [AuthController::class, 'login']);
