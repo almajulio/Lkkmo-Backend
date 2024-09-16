@@ -13,13 +13,14 @@ Route::middleware('auth:api')->group(function () {
     // Api for product
     Route::get('/products', [ProductController::class, 'index'])->name('products.index');
     Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
+    Route::get('/products/category/{category_id}', [ProductController::class, 'getByCategories'])->name('products.getbycategories');
     
     // Api for categories
-    Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+    // Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 
     // Api for order
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
-
+    Route::post('/orders', [CategoryController::class, 'store'])->name('orders.store');
     // Api for review
     Route::post('/review', [ReviewController::class, 'store']);
 
@@ -38,7 +39,7 @@ Route::middleware('auth:api')->group(function () {
         Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
         
         // Admin api for order
-        Route::post('/orders', [CategoryController::class, 'store'])->name('orders.store');
+        
         Route::put('/orders/{id}', [CategoryController::class, 'update'])->name('orders.update');
         Route::delete('/orders/{id}', [CategoryController::class, 'destroy'])->name('orders.destroy');
     });

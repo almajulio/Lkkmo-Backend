@@ -10,9 +10,11 @@ use Validator;
 class OrderController extends Controller
 {
     public function index(){
-        $orders = Order::all();
+        $user_id = auth()->user()->id;
+        $orders = Order::where('user_id', $user_id)->get();
         return new PostResource('200', "Berhasil mengambil data order", $orders);
     }
+
     public function store(Request $request){
         $validator = Validator::make($request->all(), [
             'rental_start' => 'required',

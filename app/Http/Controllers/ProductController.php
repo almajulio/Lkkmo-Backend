@@ -17,6 +17,10 @@ class ProductController extends Controller
         $products = Product::find($id);
         return new PostResource('200', "Berhasil mengambil data produk", ['products' => $products]);
     }
+    public function getByCategories($category_id){
+        $products = Product::where('category_id', $category_id)->get();
+        return new PostResource('200', "Berhasil mengambil data produk", ['products' => $products]);
+    }
 
     public function store(Request $request){
         $validator = Validator::make($request->all(), [
