@@ -9,7 +9,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 
 // Api for login
-Route::middleware('auth:api')->group(function () {
+Route::middleware('auth:api')->prefix('v1')->group(function () {
     // Api for product
     Route::get('/products', [ProductController::class, 'index'])->name('products.index');
     Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
@@ -21,6 +21,7 @@ Route::middleware('auth:api')->group(function () {
     // Api for order
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::post('/orders', [CategoryController::class, 'store'])->name('orders.store');
+    
     // Api for review
     Route::post('/review', [ReviewController::class, 'store']);
 
