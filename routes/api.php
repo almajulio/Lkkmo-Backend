@@ -10,6 +10,7 @@ use App\Http\Controllers\ProductController;
 
 // Api for login
 Route::middleware('auth:api')->prefix('v1')->group(function () {
+    
     // Api for product
     Route::get('/products', [ProductController::class, 'index'])->name('products.index');
     Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
