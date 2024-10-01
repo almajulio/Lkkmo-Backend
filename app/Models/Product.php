@@ -14,6 +14,7 @@ class Product extends Model
         "price",
         "size",
         "category_id",
+        "subcategory_id",
         "stock",
         "image"
     ];
@@ -28,6 +29,9 @@ class Product extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function subcategory(){
+        return $this->belongsTo(Subcategory::class);
+    }
     public function reviews()
     {
         return $this->hasMany(Review::class);
