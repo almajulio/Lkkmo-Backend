@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\WishlistController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -27,6 +28,11 @@ Route::prefix('v1')->group(function () {
         
         // Api for review
         Route::post('/review', [ReviewController::class, 'store']);
+
+        // Api for wishlist
+        Route::post('/wishlist', [WishlistController::class, 'store']);
+        Route::get('/wishlist', [WishlistController::class, 'index']);
+        Route::delete('/wishlist/{id}', [WishlistController::class, 'destroy']);
     
         // Api for auth
         Route::post('/logout', [AuthController::class, 'logout']);
