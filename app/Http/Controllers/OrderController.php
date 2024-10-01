@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\PostResource;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use Validator;
@@ -40,6 +41,11 @@ class OrderController extends Controller
             'rental_end' => $request->rental_end,
             'total_price' => $request->total_price,
             'status' => $request->status
+        ]);
+
+        $product = Product::find($request->product_id);
+        $product->update([
+            'stock' => $product->stock - 1
         ]);
 
         return new PostResource('200', "Berhasil Menambahkan Order", null);
