@@ -18,6 +18,7 @@ return new class extends Migration
             $table->decimal("price");
             $table->string("size");
             $table->foreignId("category_id");
+            $table->foreignId("subcategory_id");
             $table->integer("stock");
             $table->string("image");
             $table->timestamps();

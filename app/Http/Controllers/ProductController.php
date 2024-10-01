@@ -11,20 +11,37 @@ class ProductController extends Controller
 {
     public function index(){
         $products = Product::all();
+        if(!$products){
+            return new PostResource('404', "Product Tidak Ditemukan", $products);
+        }
         return new PostResource('200', "Berhasil mengambil data produk", $products);
     }
     public function show($id){
         $products = Product::find($id);
+        if(!$products){
+            return new PostResource('404', "Product Tidak Ditemukan", $products);
+        }
         return new PostResource('200', "Berhasil mengambil data produk", ['products' => $products]);
     }
     public function getByCategories($category_id){
         $products = Product::where('category_id', $category_id)->get();
+        if(!$products){
+            return new PostResource('404', "Product Tidak Ditemukan", $products);
+        }
+        return new PostResource('200', "Berhasil mengambil data produk", ['products' => $products]);
+    }
+
+    public function getBySubCategories($subcategory_id){
+        $products = Product::where('subcategory_id', $subcategory_id)->get();
+        if(!$products){
+            return new PostResource('404', "Product Tidak Ditemukan", $products);
+        }
         return new PostResource('200', "Berhasil mengambil data produk", ['products' => $products]);
     }
 
     public function store(Request $request){
         $validator = Validator::make($request->all(), [
-             'name' => 'required',
+            'name' => 'required',
             'price' => 'required',
             'description' => 'required',
             'stock' => 'required',

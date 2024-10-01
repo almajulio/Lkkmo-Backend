@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
            'stock' => 10,
            'image' => 'image.png',
            'category_id' => 1,
+           'subcategory_id' => 1,
            'size' => 'S',
        ]);
 

@@ -16,6 +16,7 @@ Route::prefix('v1')->group(function () {
         Route::get('/products', [ProductController::class, 'index'])->name('products.index');
         Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
         Route::get('/products/category/{category_id}', [ProductController::class, 'getByCategories'])->name('products.getbycategories');
+        Route::get('/products/subcategory/{subcategory_id}', [ProductController::class, 'getBySubCategories'])->name('products.getbysubcategories');
         
         // Api for categories
         // Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
