@@ -24,6 +24,7 @@ Route::prefix('v1')->group(function () {
     
         // Api for order
         Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+        Route::get('/orders/history', [OrderController::class, 'getHistory']);
         Route::post('/orders', [CategoryController::class, 'store'])->name('orders.store');
         
         // Api for review

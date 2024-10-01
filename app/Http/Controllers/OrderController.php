@@ -15,12 +15,18 @@ class OrderController extends Controller
         return new PostResource('200', "Berhasil mengambil data order", $orders);
     }
 
+    public function getHistory(){
+        $user_id = auth()->user()->id;
+        $orders = Order::where('user_id', $user_id)->where('status', 'Selesai')->get();
+        return new PostResource('200', "Berhasil mengambil history", $orders);
+    }
+
     public function store(Request $request){
         $validator = Validator::make($request->all(), [
             'rental_start' => 'required',
             'rental_end' => 'required',
             'total_price' => 'required',
-            'status' => 'required',
+            'status' => 'required|in:Belum,Selesai',
         ]);
 
         if ($validator->fails()) {

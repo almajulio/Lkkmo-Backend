@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\PostResource;
 use App\Models\Wishlist;
 use Illuminate\Http\Request;
+use Validator;
 
 class WishlistController extends Controller
 {
@@ -19,6 +20,14 @@ class WishlistController extends Controller
 
     public function store(Request $request)
     {
+        $validator = Validator::make($request->all(), [
+            'product_id' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
+
         $wishlist = Wishlist::create([
             'user_id' => auth()->user()->id,
             'product_id' => $request->product_id
