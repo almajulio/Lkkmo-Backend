@@ -1,0 +1,447 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/v1/products:
+    get:
+      summary: ''
+      operationId: getApiV1Products
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1Products
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: pariatur
+                price:
+                  type: string
+                  description: ''
+                  example: cumque
+                description:
+                  type: string
+                  description: ''
+                  example: est
+                stock:
+                  type: string
+                  description: ''
+                  example: doloribus
+                image:
+                  type: string
+                  description: ''
+                  example: exercitationem
+                category_id:
+                  type: string
+                  description: ''
+                  example: tempore
+                size:
+                  type: string
+                  description: ''
+                  example: velit
+              required:
+                - name
+                - price
+                - description
+                - stock
+                - image
+                - category_id
+                - size
+      security: []
+  '/api/v1/products/{id}':
+    get:
+      summary: ''
+      operationId: getApiV1ProductsId
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    put:
+      summary: ''
+      operationId: putApiV1ProductsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1ProductsId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the product.'
+        example: non
+        required: true
+        schema:
+          type: string
+  '/api/v1/products/category/{category_id}':
+    get:
+      summary: ''
+      operationId: getApiV1ProductsCategoryCategory_id
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: category_id
+        description: 'The ID of the category.'
+        example: deleniti
+        required: true
+        schema:
+          type: string
+  '/api/v1/products/subcategory/{subcategory_id}':
+    get:
+      summary: ''
+      operationId: getApiV1ProductsSubcategorySubcategory_id
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: subcategory_id
+        description: 'The ID of the subcategory.'
+        example: ut
+        required: true
+        schema:
+          type: string
+  /api/v1/orders:
+    get:
+      summary: ''
+      operationId: getApiV1Orders
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/orders/history:
+    get:
+      summary: ''
+      operationId: getApiV1OrdersHistory
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/review:
+    post:
+      summary: ''
+      operationId: postApiV1Review
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                rating:
+                  type: string
+                  description: ''
+                  example: enim
+                comment:
+                  type: string
+                  description: ''
+                  example: eos
+              required:
+                - rating
+                - comment
+      security: []
+  /api/v1/wishlist:
+    post:
+      summary: ''
+      operationId: postApiV1Wishlist
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                product_id:
+                  type: string
+                  description: ''
+                  example: sit
+              required:
+                - product_id
+      security: []
+    get:
+      summary: ''
+      operationId: getApiV1Wishlist
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+  '/api/v1/wishlist/{id}':
+    delete:
+      summary: ''
+      operationId: deleteApiV1WishlistId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the wishlist.'
+        example: quia
+        required: true
+        schema:
+          type: string
+  /api/v1/logout:
+    post:
+      summary: ''
+      operationId: postApiV1Logout
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/api/v1/categories/{id}':
+    put:
+      summary: ''
+      operationId: putApiV1CategoriesId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the category.'
+        example: qui
+        required: true
+        schema:
+          type: string
+  '/api/v1/orders/{id}':
+    put:
+      summary: ''
+      operationId: putApiV1OrdersId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the order.'
+        example: quaerat
+        required: true
+        schema:
+          type: string
+  /api/v1/login:
+    post:
+      summary: ''
+      operationId: postApiV1Login
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: doloribus
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: jesse31@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: qui
+              required:
+                - name
+                - email
+                - password
+      security: []
+  /api/v1/register:
+    post:
+      summary: ''
+      operationId: postApiV1Register
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: qbuckridge@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: omnis
+                name:
+                  type: string
+                  description: ''
+                  example: eos
+              required:
+                - email
+                - password
+                - name
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''

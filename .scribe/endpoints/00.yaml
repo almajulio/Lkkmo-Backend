@@ -1,0 +1,846 @@
+name: Endpoints
+description: ''
+endpoints:
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/products
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/products/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the product.'
+        required: true
+        example: non
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: non
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/products/category/{category_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      category_id:
+        name: category_id
+        description: 'The ID of the category.'
+        required: true
+        example: deleniti
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      category_id: deleniti
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: 'api/v1/products/subcategory/{subcategory_id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      subcategory_id:
+        name: subcategory_id
+        description: 'The ID of the subcategory.'
+        required: true
+        example: ut
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      subcategory_id: ut
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/orders
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/orders/history
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/review
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      rating:
+        name: rating
+        description: ''
+        required: true
+        example: enim
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      comment:
+        name: comment
+        description: ''
+        required: true
+        example: eos
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      rating: enim
+      comment: eos
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/wishlist
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      product_id:
+        name: product_id
+        description: ''
+        required: true
+        example: sit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      product_id: sit
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - GET
+    uri: api/v1/wishlist
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        status: 401
+        content: '{"message":"Unauthenticated."}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+        custom: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/wishlist/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the wishlist.'
+        required: true
+        example: quia
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: quia
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/logout
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/products
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: pariatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      price:
+        name: price
+        description: ''
+        required: true
+        example: cumque
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      description:
+        name: description
+        description: ''
+        required: true
+        example: est
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      stock:
+        name: stock
+        description: ''
+        required: true
+        example: doloribus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      image:
+        name: image
+        description: ''
+        required: true
+        example: exercitationem
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      category_id:
+        name: category_id
+        description: ''
+        required: true
+        example: tempore
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      size:
+        name: size
+        description: ''
+        required: true
+        example: velit
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name: pariatur
+      price: cumque
+      description: est
+      stock: doloribus
+      image: exercitationem
+      category_id: tempore
+      size: velit
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/products/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the product.'
+        required: true
+        example: neque
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: neque
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - DELETE
+    uri: 'api/v1/products/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the product.'
+        required: true
+        example: qui
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: qui
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/categories/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the category.'
+        required: true
+        example: qui
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: qui
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - PUT
+    uri: 'api/v1/orders/{id}'
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      id:
+        name: id
+        description: 'The ID of the order.'
+        required: true
+        example: quaerat
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanUrlParameters:
+      id: quaerat
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/login
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        name: name
+        description: ''
+        required: true
+        example: doloribus
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: jesse31@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      password:
+        name: password
+        description: ''
+        required: true
+        example: qui
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      name: doloribus
+      email: jesse31@example.com
+      password: qui
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
+  -
+    httpMethods:
+      - POST
+    uri: api/v1/register
+    metadata:
+      groupName: Endpoints
+      groupDescription: ''
+      subgroup: ''
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      custom: []
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        name: email
+        description: 'Must be a valid email address.'
+        required: true
+        example: qbuckridge@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      password:
+        name: password
+        description: ''
+        required: true
+        example: omnis
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+      name:
+        name: name
+        description: ''
+        required: true
+        example: eos
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        custom: []
+    cleanBodyParameters:
+      email: qbuckridge@example.com
+      password: omnis
+      name: eos
+    fileParameters: []
+    responses: []
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+    custom: []
