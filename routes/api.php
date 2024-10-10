@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\WishlistController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -53,6 +54,12 @@ Route::prefix('v1')->group(function () {
             // Admin api for order
             Route::put('/orders/{id}', [CategoryController::class, 'update'])->name('orders.update');
             Route::delete('/orders/{id}', [CategoryController::class, 'destroy'])->name('orders.destroy');
+
+            // Admin api for user management
+            Route::get('/users', [UserController::class, 'index']);
+            Route::post('/users', [UserController::class, 'store']);
+            Route::put('/users/{id}', [UserController::class, 'update']);
+            Route::delete('/users/{id}', [UserController::class, 'destroy']);
         });
     });
     
