@@ -61,13 +61,13 @@ endpoints:
         name: id
         description: 'The ID of the product.'
         required: true
-        example: consequatur
+        example: non
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: consequatur
+      id: non
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -110,13 +110,13 @@ endpoints:
         name: category_id
         description: 'The ID of the category.'
         required: true
-        example: ut
+        example: laboriosam
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      category_id: ut
+      category_id: laboriosam
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -159,13 +159,13 @@ endpoints:
         name: subcategory_id
         description: 'The ID of the subcategory.'
         required: true
-        example: sunt
+        example: est
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      subcategory_id: sunt
+      subcategory_id: est
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -329,7 +329,7 @@ endpoints:
         name: rating
         description: ''
         required: true
-        example: ad
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -338,14 +338,14 @@ endpoints:
         name: comment
         description: ''
         required: true
-        example: dolorem
+        example: magnam
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      rating: ad
-      comment: dolorem
+      rating: qui
+      comment: magnam
     fileParameters: []
     responses: []
     responseFields: []
@@ -379,13 +379,13 @@ endpoints:
         name: product_id
         description: ''
         required: true
-        example: culpa
+        example: delectus
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      product_id: culpa
+      product_id: delectus
     fileParameters: []
     responses: []
     responseFields: []
@@ -454,13 +454,13 @@ endpoints:
         name: id
         description: 'The ID of the wishlist.'
         required: true
-        example: repellendus
+        example: ut
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: repellendus
+      id: ut
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -528,7 +528,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: voluptas
+        example: eum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -537,7 +537,7 @@ endpoints:
         name: price
         description: ''
         required: true
-        example: odit
+        example: laborum
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -546,7 +546,7 @@ endpoints:
         name: description
         description: ''
         required: true
-        example: qui
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -555,7 +555,7 @@ endpoints:
         name: stock
         description: ''
         required: true
-        example: aliquid
+        example: illo
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -573,7 +573,7 @@ endpoints:
         name: category_id
         description: ''
         required: true
-        example: voluptatem
+        example: reprehenderit
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -582,18 +582,18 @@ endpoints:
         name: size
         description: ''
         required: true
-        example: nulla
+        example: at
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: voluptas
-      price: odit
-      description: qui
-      stock: aliquid
-      category_id: voluptatem
-      size: nulla
+      name: eum
+      price: laborum
+      description: consequatur
+      stock: illo
+      category_id: reprehenderit
+      size: at
     fileParameters:
       image: null
     responses: []
@@ -624,13 +624,13 @@ endpoints:
         name: id
         description: 'The ID of the product.'
         required: true
-        example: est
+        example: natus
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: est
+      id: natus
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -664,13 +664,13 @@ endpoints:
         name: id
         description: 'The ID of the product.'
         required: true
-        example: nihil
+        example: porro
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: nihil
+      id: porro
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -704,13 +704,13 @@ endpoints:
         name: id
         description: 'The ID of the category.'
         required: true
-        example: voluptatibus
+        example: perferendis
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: voluptatibus
+      id: perferendis
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -744,13 +744,13 @@ endpoints:
         name: id
         description: 'The ID of the order.'
         required: true
-        example: repellat
+        example: a
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: repellat
+      id: a
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -827,7 +827,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: dolorem
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -836,7 +836,7 @@ endpoints:
         name: email
         description: ''
         required: true
-        example: optio
+        example: culpa
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -845,7 +845,7 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: dolore
+        example: aspernatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -854,16 +854,16 @@ endpoints:
         name: role
         description: ''
         required: true
-        example: reiciendis
+        example: sunt
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: dolorem
-      email: optio
-      password: dolore
-      role: reiciendis
+      name: et
+      email: culpa
+      password: aspernatur
+      role: sunt
     fileParameters: []
     responses: []
     responseFields: []
@@ -893,13 +893,13 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: iste
+        example: inventore
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: iste
+      id: inventore
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -933,13 +933,13 @@ endpoints:
         name: id
         description: 'The ID of the user.'
         required: true
-        example: consequuntur
+        example: laborum
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanUrlParameters:
-      id: consequuntur
+      id: laborum
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -977,7 +977,7 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: rem
+        example: veniam
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -986,7 +986,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: ziemann.judah@example.org
+        example: okon.destini@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -995,15 +995,15 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: consequatur
+        example: molestiae
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      name: rem
-      email: ziemann.judah@example.org
-      password: consequatur
+      name: veniam
+      email: okon.destini@example.org
+      password: molestiae
     fileParameters: []
     responses: []
     responseFields: []
@@ -1037,7 +1037,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: mittie.rogahn@example.org
+        example: rbeatty@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1046,7 +1046,7 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: eius
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1055,15 +1055,15 @@ endpoints:
         name: name
         description: ''
         required: true
-        example: nostrum
+        example: libero
         type: string
         enumValues: []
         exampleWasSpecified: false
         custom: []
     cleanBodyParameters:
-      email: mittie.rogahn@example.org
-      password: eius
-      name: nostrum
+      email: rbeatty@example.org
+      password: et
+      name: libero
     fileParameters: []
     responses: []
     responseFields: []

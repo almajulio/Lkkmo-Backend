@@ -47,19 +47,19 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: voluptas
+                  example: eum
                 price:
                   type: string
                   description: ''
-                  example: odit
+                  example: laborum
                 description:
                   type: string
                   description: ''
-                  example: qui
+                  example: consequatur
                 stock:
                   type: string
                   description: ''
-                  example: aliquid
+                  example: illo
                 image:
                   type: string
                   format: binary
@@ -67,11 +67,11 @@ paths:
                 category_id:
                   type: string
                   description: ''
-                  example: voluptatem
+                  example: reprehenderit
                 size:
                   type: string
                   description: ''
-                  example: nulla
+                  example: at
               required:
                 - name
                 - price
@@ -126,7 +126,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the product.'
-        example: consequatur
+        example: non
         required: true
         schema:
           type: string
@@ -157,7 +157,7 @@ paths:
         in: path
         name: category_id
         description: 'The ID of the category.'
-        example: ut
+        example: laboriosam
         required: true
         schema:
           type: string
@@ -188,7 +188,7 @@ paths:
         in: path
         name: subcategory_id
         description: 'The ID of the subcategory.'
-        example: sunt
+        example: est
         required: true
         schema:
           type: string
@@ -277,11 +277,11 @@ paths:
                 rating:
                   type: string
                   description: ''
-                  example: ad
+                  example: qui
                 comment:
                   type: string
                   description: ''
-                  example: dolorem
+                  example: magnam
               required:
                 - rating
                 - comment
@@ -305,7 +305,7 @@ paths:
                 product_id:
                   type: string
                   description: ''
-                  example: culpa
+                  example: delectus
               required:
                 - product_id
       security: []
@@ -345,7 +345,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the wishlist.'
-        example: repellendus
+        example: ut
         required: true
         schema:
           type: string
@@ -374,7 +374,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the category.'
-        example: voluptatibus
+        example: perferendis
         required: true
         schema:
           type: string
@@ -393,7 +393,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the order.'
-        example: repellat
+        example: a
         required: true
         schema:
           type: string
@@ -437,19 +437,19 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: dolorem
+                  example: et
                 email:
                   type: string
                   description: ''
-                  example: optio
+                  example: culpa
                 password:
                   type: string
                   description: ''
-                  example: dolore
+                  example: aspernatur
                 role:
                   type: string
                   description: ''
-                  example: reiciendis
+                  example: sunt
               required:
                 - name
                 - email
@@ -480,7 +480,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the user.'
-        example: iste
+        example: inventore
         required: true
         schema:
           type: string
@@ -503,15 +503,15 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: rem
+                  example: veniam
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: ziemann.judah@example.org
+                  example: okon.destini@example.org
                 password:
                   type: string
                   description: ''
-                  example: consequatur
+                  example: molestiae
               required:
                 - name
                 - email
@@ -536,15 +536,15 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: mittie.rogahn@example.org
+                  example: rbeatty@example.org
                 password:
                   type: string
                   description: ''
-                  example: eius
+                  example: et
                 name:
                   type: string
                   description: ''
-                  example: nostrum
+                  example: libero
               required:
                 - email
                 - password

@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Laravel",
-        "_postman_id": "f01a3410-e5a6-4c4d-83cc-2f2058b8f0c8",
+        "_postman_id": "36e2acee-5a7f-4375-ac38-1cdabe9b56a5",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -79,7 +79,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "consequatur",
+                                    "value": "non",
                                     "description": "The ID of the product."
                                 }
                             ]
@@ -135,7 +135,7 @@
                                 {
                                     "id": "category_id",
                                     "key": "category_id",
-                                    "value": "ut",
+                                    "value": "laboriosam",
                                     "description": "The ID of the category."
                                 }
                             ]
@@ -191,7 +191,7 @@
                                 {
                                     "id": "subcategory_id",
                                     "key": "subcategory_id",
-                                    "value": "sunt",
+                                    "value": "est",
                                     "description": "The ID of the subcategory."
                                 }
                             ]
@@ -401,7 +401,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"rating\":\"ad\",\"comment\":\"dolorem\"}"
+                            "raw": "{\"rating\":\"qui\",\"comment\":\"magnam\"}"
                         },
                         "description": "",
                         "auth": {
@@ -432,7 +432,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"product_id\":\"culpa\"}"
+                            "raw": "{\"product_id\":\"delectus\"}"
                         },
                         "description": "",
                         "auth": {
@@ -501,7 +501,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "repellendus",
+                                    "value": "ut",
                                     "description": "The ID of the wishlist."
                                 }
                             ]
@@ -578,37 +578,37 @@
                             "formdata": [
                                 {
                                     "key": "name",
-                                    "value": "voluptas",
+                                    "value": "eum",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "price",
-                                    "value": "odit",
+                                    "value": "laborum",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "description",
-                                    "value": "qui",
+                                    "value": "consequatur",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "stock",
-                                    "value": "aliquid",
+                                    "value": "illo",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "category_id",
-                                    "value": "voluptatem",
+                                    "value": "reprehenderit",
                                     "type": "text",
                                     "description": ""
                                 },
                                 {
                                     "key": "size",
-                                    "value": "nulla",
+                                    "value": "at",
                                     "type": "text",
                                     "description": ""
                                 },
@@ -638,7 +638,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "est",
+                                    "value": "natus",
                                     "description": "The ID of the product."
                                 }
                             ]
@@ -674,7 +674,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "nihil",
+                                    "value": "porro",
                                     "description": "The ID of the product."
                                 }
                             ]
@@ -710,7 +710,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "voluptatibus",
+                                    "value": "perferendis",
                                     "description": "The ID of the category."
                                 }
                             ]
@@ -746,7 +746,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "repellat",
+                                    "value": "a",
                                     "description": "The ID of the order."
                                 }
                             ]
@@ -840,7 +840,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"dolorem\",\"email\":\"optio\",\"password\":\"dolore\",\"role\":\"reiciendis\"}"
+                            "raw": "{\"name\":\"et\",\"email\":\"culpa\",\"password\":\"aspernatur\",\"role\":\"sunt\"}"
                         },
                         "description": "",
                         "auth": {
@@ -861,7 +861,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "iste",
+                                    "value": "inventore",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -897,7 +897,7 @@
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "consequuntur",
+                                    "value": "laborum",
                                     "description": "The ID of the user."
                                 }
                             ]
@@ -943,7 +943,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"rem\",\"email\":\"ziemann.judah@example.org\",\"password\":\"consequatur\"}"
+                            "raw": "{\"name\":\"veniam\",\"email\":\"okon.destini@example.org\",\"password\":\"molestiae\"}"
                         },
                         "description": "",
                         "auth": {
@@ -974,7 +974,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"mittie.rogahn@example.org\",\"password\":\"eius\",\"name\":\"nostrum\"}"
+                            "raw": "{\"email\":\"rbeatty@example.org\",\"password\":\"et\",\"name\":\"libero\"}"
                         },
                         "description": "",
                         "auth": {
