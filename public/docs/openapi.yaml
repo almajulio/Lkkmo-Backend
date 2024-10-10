@@ -40,38 +40,38 @@ paths:
       requestBody:
         required: true
         content:
-          application/json:
+          multipart/form-data:
             schema:
               type: object
               properties:
                 name:
                   type: string
                   description: ''
-                  example: pariatur
+                  example: voluptas
                 price:
                   type: string
                   description: ''
-                  example: cumque
+                  example: odit
                 description:
                   type: string
                   description: ''
-                  example: est
+                  example: qui
                 stock:
                   type: string
                   description: ''
-                  example: doloribus
+                  example: aliquid
                 image:
                   type: string
-                  description: ''
-                  example: exercitationem
+                  format: binary
+                  description: 'Must be an image. Must not be greater than 2048 kilobytes.'
                 category_id:
                   type: string
                   description: ''
-                  example: tempore
+                  example: voluptatem
                 size:
                   type: string
                   description: ''
-                  example: velit
+                  example: nulla
               required:
                 - name
                 - price
@@ -126,7 +126,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the product.'
-        example: non
+        example: consequatur
         required: true
         schema:
           type: string
@@ -157,7 +157,7 @@ paths:
         in: path
         name: category_id
         description: 'The ID of the category.'
-        example: deleniti
+        example: ut
         required: true
         schema:
           type: string
@@ -188,10 +188,32 @@ paths:
         in: path
         name: subcategory_id
         description: 'The ID of the subcategory.'
-        example: ut
+        example: sunt
         required: true
         schema:
           type: string
+  /api/v1/categories:
+    get:
+      summary: ''
+      operationId: getApiV1Categories
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
   /api/v1/orders:
     get:
       summary: ''
@@ -255,11 +277,11 @@ paths:
                 rating:
                   type: string
                   description: ''
-                  example: enim
+                  example: ad
                 comment:
                   type: string
                   description: ''
-                  example: eos
+                  example: dolorem
               required:
                 - rating
                 - comment
@@ -283,7 +305,7 @@ paths:
                 product_id:
                   type: string
                   description: ''
-                  example: sit
+                  example: culpa
               required:
                 - product_id
       security: []
@@ -323,7 +345,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the wishlist.'
-        example: quia
+        example: repellendus
         required: true
         schema:
           type: string
@@ -352,7 +374,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the category.'
-        example: qui
+        example: voluptatibus
         required: true
         schema:
           type: string
@@ -371,7 +393,94 @@ paths:
         in: path
         name: id
         description: 'The ID of the order.'
-        example: quaerat
+        example: repellat
+        required: true
+        schema:
+          type: string
+  /api/v1/users:
+    get:
+      summary: ''
+      operationId: getApiV1Users
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+      security: []
+    post:
+      summary: ''
+      operationId: postApiV1Users
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: ''
+                  example: dolorem
+                email:
+                  type: string
+                  description: ''
+                  example: optio
+                password:
+                  type: string
+                  description: ''
+                  example: dolore
+                role:
+                  type: string
+                  description: ''
+                  example: reiciendis
+              required:
+                - name
+                - email
+                - password
+                - role
+      security: []
+  '/api/v1/users/{id}':
+    put:
+      summary: ''
+      operationId: putApiV1UsersId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: ''
+      operationId: deleteApiV1UsersId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the user.'
+        example: iste
         required: true
         schema:
           type: string
@@ -394,15 +503,15 @@ paths:
                 name:
                   type: string
                   description: ''
-                  example: doloribus
+                  example: rem
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: jesse31@example.com
+                  example: ziemann.judah@example.org
                 password:
                   type: string
                   description: ''
-                  example: qui
+                  example: consequatur
               required:
                 - name
                 - email
@@ -427,15 +536,15 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: qbuckridge@example.com
+                  example: mittie.rogahn@example.org
                 password:
                   type: string
                   description: ''
-                  example: omnis
+                  example: eius
                 name:
                   type: string
                   description: ''
-                  example: eos
+                  example: nostrum
               required:
                 - email
                 - password
