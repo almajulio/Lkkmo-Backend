@@ -20,7 +20,7 @@ Route::prefix('v1')->group(function () {
         Route::get('/products/subcategory/{subcategory_id}', [ProductController::class, 'getBySubCategories'])->name('products.getbysubcategories');
         
         // Api for categories
-        // Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+        Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
     
         // Api for order
         Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
@@ -51,7 +51,6 @@ Route::prefix('v1')->group(function () {
             Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
             
             // Admin api for order
-            
             Route::put('/orders/{id}', [CategoryController::class, 'update'])->name('orders.update');
             Route::delete('/orders/{id}', [CategoryController::class, 'destroy'])->name('orders.destroy');
         });

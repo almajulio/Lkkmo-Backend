@@ -45,7 +45,7 @@ class ProductController extends Controller
             'price' => 'required',
             'description' => 'required',
             'stock' => 'required',
-            'image' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'category_id' => 'required',
             'size' => 'required',
         ]);
@@ -54,14 +54,15 @@ class ProductController extends Controller
             return response()->json($validator->errors(), 422);
         }
 
+
         $product = Product::create([
             'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
             'stock' => $request->stock,
-            'image' => $request->image,
             'category_id' => $request->category_id,
             'size' => $request->size,
+            'image' => $request->file('image')->store('images', 'public')
         ]);
 
         return new PostResource('200', "Berhasil Menambahkan Product", $product);
