@@ -14,7 +14,7 @@ class CategoryController extends Controller
         return new PostResource('200', "Berhasil mengambil data kategori", $categories);
     }
 
-    public function create(Request $request){
+    public function store(Request $request){
          $validator = Validator::make($request->all(), [
             'name' => 'required',
         ]);
