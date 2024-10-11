@@ -10,7 +10,7 @@ use Validator;
 class CategoryController extends Controller
 {
     public function index(){
-        $categories = Category::all()->with('subcategories');
+        $categories = Category::with('subcategories')->get();
         return new PostResource('200', "Berhasil mengambil data kategori", $categories);
     }
 

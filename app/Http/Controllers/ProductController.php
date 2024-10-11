@@ -10,7 +10,7 @@ use Validator;
 class ProductController extends Controller
 {
     public function index(){
-        $products = Product::all()->with('category', 'subcategory');
+        $products = Product::with('category', 'subcategory')->get();
         if(!$products){
             return new PostResource('404', "Product Tidak Ditemukan", $products);
         }

@@ -17,8 +17,24 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
+       Product::create([
+           'name' => 'Product 1',
+           'price' => 100000,
+           'description' => 'Deskripsi 1',
+           'stock' => 10,
+           'image' => 'image.png',
+           'category_id' => 1,
+           'subcategory_id' => 1,
+           'size' => 'S',
+       ]);
 
-        $this->call(CategorySeeder::class);
-        $this->call(RoleSeeder::class);
+       Review::create([
+           'user_id' => 1,
+           'product_id' => 1,
+           'rating' => 5,
+           'comment' => 'Review 1',
+       ]);
+        // $this->call(CategorySeeder::class);
+        // $this->call(RoleSeeder::class);
     }
 }
