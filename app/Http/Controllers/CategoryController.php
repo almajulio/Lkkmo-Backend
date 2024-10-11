@@ -15,7 +15,7 @@ class CategoryController extends Controller
     }
 
     public function show($id){
-        $category = Category::find($id)->with('subcategories')->get();
+        $category = Category::find($id)->with('subcategories')->first();
         if(!$category){
             return new PostResource('404', "Kategori Tidak Ditemukan", null);
         }
