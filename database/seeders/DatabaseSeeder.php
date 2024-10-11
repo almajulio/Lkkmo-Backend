@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
            'rating' => 5,
            'comment' => 'Review 1',
        ]);
-        // $this->call(CategorySeeder::class);
-        // $this->call(RoleSeeder::class);
+        $this->call(CategorySeeder::class);
+        $this->call(RoleSeeder::class);
     }
 }
