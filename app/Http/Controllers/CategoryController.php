@@ -14,6 +14,14 @@ class CategoryController extends Controller
         return new PostResource('200', "Berhasil mengambil data kategori", $categories);
     }
 
+    public function show($id){
+        $category = Category::find($id);
+        if(!$category){
+            return new PostResource('404', "Kategori Tidak Ditemukan", null);
+        }
+        return new PostResource('200', "Berhasil mengambil data kategori", $category);
+    }
+
     public function store(Request $request){
          $validator = Validator::make($request->all(), [
             'name' => 'required',
