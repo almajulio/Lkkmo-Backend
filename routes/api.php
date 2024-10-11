@@ -48,7 +48,7 @@ Route::prefix('v1')->group(function () {
             
             // Admin api for category
             Route::post('/categories', [CategoryController::class, 'store'])->name('categories.store');
-            Route::get('/categories/id', [CategoryController::class, 'show']);
+            Route::get('/categories/{id}', [CategoryController::class, 'show']);
             Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('categories.update');
             Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
             
