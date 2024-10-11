@@ -71,13 +71,13 @@ class ProductController extends Controller
     }
 
     public function update(Request $request, $id){
-        $product = Product::find($id);
+        $product = Product::where('id', $id)->first();
 
         if(!$product){
             return new PostResource('404', "Product Tidak Ditemukan", $product);
         }
         
-        Product::update([
+        $product->update([
             'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
