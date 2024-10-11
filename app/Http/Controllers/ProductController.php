@@ -77,7 +77,7 @@ class ProductController extends Controller
             return new PostResource('404', "Product Tidak Ditemukan", $product);
         }
         
-        $product->Product::update([
+        $product->update([
             'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
