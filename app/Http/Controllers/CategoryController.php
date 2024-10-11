@@ -36,7 +36,7 @@ class CategoryController extends Controller
         return new PostResource('200', "Berhasil Mengupdate Kategori", $category);
     }
 
-    public function delete($id){
+    public function destroy($id){
         $category = Category::find($id);
         if(!$category){
             return new PostResource('404', "Kategori Tidak Ditemukan", null);
