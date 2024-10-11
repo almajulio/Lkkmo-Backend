@@ -48,6 +48,7 @@ class ProductController extends Controller
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'category_id' => 'required',
             'size' => 'required',
+            'subcategory_id' => 'required',
         ]);
 
         if ($validator->fails()) {
@@ -56,6 +57,7 @@ class ProductController extends Controller
 
 
         $product = Product::create([
+            'subcategory_id' => $request->subcategory_id,
             'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
