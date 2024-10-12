@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WishlistController;
+use App\Models\Subcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -22,6 +23,7 @@ Route::prefix('v1')->group(function () {
         
         // Api for categories
         Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+        // Route::get('/subcategories', [Subcategory::class, 'index'])->name('subcategories.index');
     
         // Api for order
         Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
@@ -51,6 +53,15 @@ Route::prefix('v1')->group(function () {
             Route::get('/categories/{id}', [CategoryController::class, 'show']);
             Route::put('/categories/{id}', [CategoryController::class, 'update'])->name('categories.update');
             Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+
+            // Admin api for subcategory
+            Route::post('/subcategories', [Subcategory::class, 'store'])->name('subcategories.store');
+            Route::get('/subcategories/{id}', [Subcategory::class, 'show']);
+            Route::put('/subcategories/{id}', [Subcategory::class, 'update'])->name('subcategories.update');
+            Route::delete('/subcategories/{id}', [Subcategory::class, 'destroy'])->name('subcategories.destroy');
+            
+            // Admin api for order
+            Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
             
             // Admin api for order
             Route::put('/orders/{id}', [CategoryController::class, 'update'])->name('orders.update');
