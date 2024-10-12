@@ -39,6 +39,7 @@ class ProductController extends Controller
         }
         return new PostResource('200', "Berhasil mengambil data produk", ['products' => $products]);
     }
+    
 
     public function store(Request $request)
     {
