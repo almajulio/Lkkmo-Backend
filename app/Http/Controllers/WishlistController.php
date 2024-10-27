@@ -13,7 +13,7 @@ class WishlistController extends Controller
     {
         $wishlists = Wishlist::where('user_id', auth()->user()->id)->get();
         if(!$wishlists){
-            return new PostResource('404', "Wishlist Tidak Ditemukan", $wishlists);
+            return new PostResource('404', "Wishlist Tidak Ditemukan");
         }
         return new PostResource('200', "Berhasil mengambil data wishlist", $wishlists);
     }
@@ -39,12 +39,12 @@ class WishlistController extends Controller
     {
         $wishlist = Wishlist::find($id);
         if(auth()->user()->id != $wishlist->user_id){
-            return new PostResource('401', "Anda Tidak Memiliki Akses", $wishlist);
+            return new PostResource('401', "Anda Tidak Memiliki Akses");
         }
         if(!$wishlist){
-            return new PostResource('404', "Wishlist Tidak Ditemukan", $wishlist);
+            return new PostResource('404', "Wishlist Tidak Ditemukan");
         }
         $wishlist->delete();
-        return new PostResource('200', "Behasil menghapus wishlist", $wishlist);
+        return new PostResource('200', "Behasil menghapus wishlist");
     }
 }
