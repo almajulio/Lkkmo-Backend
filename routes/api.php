@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WishlistController;
-use App\Models\Subcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -28,7 +28,7 @@ Route::prefix('v1')->group(function () {
         // Api for order
         Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
         Route::get('/orders/history', [OrderController::class, 'getHistory']);
-        Route::post('/orders', [CategoryController::class, 'store'])->name('orders.store');
+        Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
         
         // Api for review
         Route::post('/review', [ReviewController::class, 'store']);
@@ -55,10 +55,10 @@ Route::prefix('v1')->group(function () {
             Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])->name('categories.destroy');
 
             // Admin api for subcategory
-            Route::post('/subcategories', [Subcategory::class, 'store'])->name('subcategories.store');
-            Route::get('/subcategories/{id}', [Subcategory::class, 'show']);
-            Route::put('/subcategories/{id}', [Subcategory::class, 'update'])->name('subcategories.update');
-            Route::delete('/subcategories/{id}', [Subcategory::class, 'destroy'])->name('subcategories.destroy');
+            Route::post('/subcategories', [SubcategoryController::class, 'store'])->name('subcategories.store');
+            Route::get('/subcategories/{id}', [SubcategoryController::class, 'show']);
+            Route::put('/subcategories/{id}', [SubcategoryController::class, 'update'])->name('subcategories.update');
+            Route::delete('/subcategories/{id}', [SubcategoryController::class, 'destroy'])->name('subcategories.destroy');
             
             // Admin api for order
             Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');

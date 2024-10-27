@@ -38,7 +38,7 @@ class WishlistController extends Controller
     public function destroy($id)
     {
         $wishlist = Wishlist::find($id);
-        if(auth()->user()->id != $wishlist->user_id || auth()->user()->role != 'admin'){
+        if(auth()->user()->id != $wishlist->user_id){
             return new PostResource('401', "Anda Tidak Memiliki Akses", $wishlist);
         }
         if(!$wishlist){
