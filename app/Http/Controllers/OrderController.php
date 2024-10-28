@@ -38,7 +38,7 @@ class OrderController extends Controller
         }
 
         Order::create([
-            'user_id' => $request->auth()->user()->id,
+            'user_id' => auth()->user()->id,
             'quantity' => $request->quantity,
             'product_id' => $request->product_id,
             'size' => $request->size,
