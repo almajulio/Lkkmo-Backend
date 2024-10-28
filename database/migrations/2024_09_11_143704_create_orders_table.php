@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId("user_id");
             $table->foreignId("product_id");
+            $table->integer("quantity");
             $table->date("rental_start");
             $table->date("rental_end");
             $table->decimal("total_price");

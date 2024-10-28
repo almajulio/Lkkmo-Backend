@@ -27,6 +27,8 @@ class OrderController extends Controller
             'rental_start' => 'required',
             'rental_end' => 'required',
             'total_price' => 'required',
+            'quantity' => 'required',
+            'product_id' => 'required',
             'status' => 'required|in:Belum,Selesai',
         ]);
 
@@ -35,7 +37,8 @@ class OrderController extends Controller
         }
 
         Order::create([
-            'user_id' => $request->user_id,
+            'user_id' => $request->auth()->user()->id,
+            'quantity' => $request->quantity,
             'product_id' => $request->product_id,
             'rental_start' => $request->rental_start,
             'rental_end' => $request->rental_end,
