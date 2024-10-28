@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string("name");
             $table->string("description");
             $table->decimal("price");
-            $table->string("size");
             $table->foreignId("category_id");
             $table->foreignId("subcategory_id");
             $table->integer("stock");

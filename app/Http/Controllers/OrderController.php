@@ -30,6 +30,7 @@ class OrderController extends Controller
             'quantity' => 'required',
             'product_id' => 'required',
             'status' => 'required|in:Belum,Selesai',
+            'size' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -40,6 +41,7 @@ class OrderController extends Controller
             'user_id' => $request->auth()->user()->id,
             'quantity' => $request->quantity,
             'product_id' => $request->product_id,
+            'size' => $request->size,
             'rental_start' => $request->rental_start,
             'rental_end' => $request->rental_end,
             'total_price' => $request->total_price,

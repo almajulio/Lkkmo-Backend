@@ -25,7 +25,6 @@ class DatabaseSeeder extends Seeder
            'image' => 'image.png',
            'category_id' => 1,
            'subcategory_id' => 1,
-           'size' => 'S',
        ]);
 
        Review::create([
