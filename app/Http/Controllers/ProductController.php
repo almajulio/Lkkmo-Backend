@@ -50,7 +50,6 @@ class ProductController extends Controller
             'stock' => 'required',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'category_id' => 'required',
-            'size' => 'required',
             'subcategory_id' => 'required',
         ]);
 
@@ -68,7 +67,6 @@ class ProductController extends Controller
             'description' => $request->description,
             'stock' => $request->stock,
             'category_id' => $request->category_id,
-            'size' => $request->size,
             'image' => $imagePath, // Simpan path gambar
         ]);
 
@@ -105,7 +103,6 @@ class ProductController extends Controller
             'stock' => $request->stock,
             'image' => $imagePath, // Simpan path gambar (baru atau lama)
             'category_id' => $request->category_id,
-            'size' => $request->size,
         ]);
 
         return new PostResource('200', "Berhasil Mengupdate Product", $product);
