@@ -48,7 +48,7 @@ class OrderController extends Controller
 
         $product = Product::find($request->product_id);
         $product->update([
-            'stock' => $product->stock - 1
+            'stock' => $product->stock - $request->quantity
         ]);
 
         return new PostResource('200', "Berhasil Menambahkan Order", null);
