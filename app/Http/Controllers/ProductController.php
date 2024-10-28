@@ -18,7 +18,7 @@ class ProductController extends Controller
         return new PostResource('200', "Berhasil mengambil data produk", $products);
     }
     public function show($id){
-        $products = Product::find($id);
+        $products = Product::find($id)->with('reviews');
         if(!$products){
             return new PostResource('404', "Product Tidak Ditemukan", $products);
         }
