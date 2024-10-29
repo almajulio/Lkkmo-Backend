@@ -14,6 +14,7 @@ class Order extends Model
         "rental_start",
         "rental_end",
         "total_price",
+        "quantity",
         "status",
     ];
     use HasFactory;
