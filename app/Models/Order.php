@@ -12,6 +12,7 @@ class Order extends Model
         "user_id",
         "product_id",
         "rental_start",
+        "size",
         "rental_end",
         "total_price",
         "quantity",
