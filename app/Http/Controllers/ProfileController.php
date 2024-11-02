@@ -20,10 +20,17 @@ class ProfileController extends Controller
             return new PostResource('404', "User Tidak Ditemukan", $user);
         }
 
-        if($user->id != auth()->user()->id){
-            return new PostResource('401', "Anda Tidak Memiliki Akses");
+         // Initialize data array with request inputs
+        $data = $request->all();
+
+        // Handle file upload if an image is provided
+        if ($request->hasFile('image')) {
+            $image = $request->file('image')->store('images', 'public');
+            $data['profile_photo_path'] = $image; // Add image path to data
         }
-        $user->update($request->all());
+
+        // Update the user with the prepared data
+        $user->update($data);
         return new PostResource('200', "Berhasil Mengupdate Profile", $user);
     }
 }
