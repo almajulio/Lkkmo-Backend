@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\PostResource;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Validator;
 
 class ProfileController extends Controller
 {
@@ -15,6 +16,15 @@ class ProfileController extends Controller
     }
 
     public function update(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'name' => 'nullable',
+            'phone' => 'nullable',
+            'alamat' => 'nullable',
+            'password' => 'nullable',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
         $user = User::find(auth()->user()->id);
         if(!$user){
             return new PostResource('404', "User Tidak Ditemukan", $user);

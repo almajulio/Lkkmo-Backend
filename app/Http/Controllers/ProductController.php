@@ -88,6 +88,20 @@ class ProductController extends Controller
 
     public function update(Request $request, $id)
     {
+
+           $validator = Validator::make($request->all(), [
+            'name' => 'nullable',
+            'price' => 'nullable',
+            'description' => 'nullable',
+            'stock' => 'nullable',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'category_id' => 'nullable',
+            'subcategory_id' => 'nullable',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 422);
+        }
         $product = Product::where('id', $id)->first();
 
         if (!$product) {
