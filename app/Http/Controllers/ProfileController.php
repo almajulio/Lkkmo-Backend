@@ -15,32 +15,43 @@ class ProfileController extends Controller
         return new PostResource('200', "Berhasil mengambil data profile", $user);
     }
 
-    public function update(Request $request){
-
-        $validator = Validator::make($request->all(), [
-            'name' => 'nullable',
-            'phone' => 'nullable',
-            'alamat' => 'nullable',
-            'password' => 'nullable',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
-
-        $user = User::find(auth()->user()->id);
-        if(!$user){
-            return new PostResource('404', "User Tidak Ditemukan", $user);
-        }
-
-         // Initialize data array with request inputs
-        $data = $request->all();
-
-        // Handle file upload if an image is provided
-        if ($request->hasFile('image')) {
-            $image = $request->file('image')->store('images', 'public');
-            $data['profile_photo_path'] = $image; // Add image path to data
-        }
-
-        // Update the user with the prepared data
-        $user->update($data);
-        return new PostResource('200', "Berhasil Mengupdate Profile", $user);
+   public function update(Request $request)
+{
+    // Validate request data
+    $validator = Validator::make($request->all(), [
+        'name' => 'nullable|string',
+        'phone' => 'nullable|string',
+        'alamat' => 'nullable|string',
+        'password' => 'nullable|string',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+    ]);
+    if ($validator->fails()) {
+        return response()->json($validator->errors(), 422);
     }
+    // Find the authenticated user
+    $user = User::find(auth()->user()->id);
+    if (!$user) {
+        return new PostResource('404', "User Tidak Ditemukan", $user);
+    }
+
+    // Prepare data with only provided fields
+    $data = array_filter($request->only(['name', 'phone', 'alamat', 'password']), fn($value) => !is_null($value));
+
+    // Hash the password if it's provided
+    if (isset($data['password'])) {
+        $data['password'] = bcrypt($data['password']);
+    }
+
+    // Handle file upload if an image is provided
+    if ($request->hasFile('image')) {
+        $imagePath = $request->file('image')->store('images', 'public');
+        $data['profile_photo_path'] = $imagePath;
+    }
+
+    // Update the user with filtered data
+    $user->update($data);
+
+    return new PostResource('200', "Berhasil Mengupdate Profile", $user);
+}
+
 }

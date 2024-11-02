@@ -46,13 +46,13 @@ Route::prefix('v1')->group(function () {
 
         // Api for profile
         Route::get('/profile', [ProfileController::class, 'index']);
-        Route::put('/profile/update', [ProfileController::class, 'update']);
+        Route::post('/profile/update', [ProfileController::class, 'update']);
 
         // Api for admin
         Route::middleware('checkRole:admin')->group(function () {
             // Admin api for product
             Route::post('/products', [ProductController::class, 'store'])->name('products.store');
-            Route::put('/products/{id}', [ProductController::class, 'update'])->name('products.update');
+            Route::post('/products/{id}', [ProductController::class, 'update'])->name('products.update');
             Route::delete('/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
             
             // Admin api for category
