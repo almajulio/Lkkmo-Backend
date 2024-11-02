@@ -51,18 +51,21 @@ class OrderController extends Controller
 
         // Mengatur opsi cURL
         $postData = [
-            'target' => '082379198888',
-            'message' => 'Halo '. $user->name . '! Terima kasih telah memilih *Renturstyle* untuk kebutuhan rental Anda!
+            'target' => $user->phone,
+            'message' => 'Halo *'. $user->name . '!* Terima kasih telah memilih *Renturstyle* untuk kebutuhan rental Anda!
 Berikut adalah detail pesanan Anda:
 - Nama Produk: ' . $produk->name . '
 - Ukuran: ' . $request->size . '
 - Jumlah Pesanan: ' . $request->quantity . '
 - Total Harga: Rp ' . $request->total_price . '
+
 Periode Rental:
 - Mulai Rental: ' . $request->rental_start . '
-                            - Akhir Rental: ' . $request->rental_end . '
-Untuk melanjutkan, silakan melakukan pembayaran sejumlah Rp ' . $request->total_price . ' ke rekening Dana berikut:
-082180918098 (a.n Renturstyle)
+- Akhir Rental: ' . $request->rental_end . '
+
+Untuk melanjutkan, silakan melakukan pembayaran sejumlah *Rp.' . $request->total_price . '* ke rekening Dana berikut:
+    *082180918098 (a.n Renturstyle)*
+
 Setelah pembayaran diterima, kami akan segera memproses pesanan Anda.
 Terima kasih!',
             'countryCode' => '62' // optional, bisa disesuaikan jika perlu
