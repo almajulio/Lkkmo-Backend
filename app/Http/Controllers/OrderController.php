@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\PostResource;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use Validator;
@@ -39,6 +40,8 @@ class OrderController extends Controller
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
+        $produk = Product::find($request->product_id);
+        $user = User::find(auth()->user()->id);
 
         $url = 'https://api.fonnte.com/send';
         $token = '2TQsabhhruZyHNz17PRt'; // Ganti dengan token Anda
@@ -49,7 +52,19 @@ class OrderController extends Controller
         // Mengatur opsi cURL
         $postData = [
             'target' => '082379198888',
-            'message' => 'anda memesan barang',
+            'message' => 'Halo '. $user->name . ',! Terima kasih telah memilih *Renturstyle* untuk kebutuhan rental Anda!\n\n
+                            Berikut adalah detail pesanan Anda:\n
+                            - Nama Produk: ' . $produk->name . '\n
+                            - Ukuran: ' . $request->size . '\n
+                            - Jumlah Pesanan: ' . $request->quantity . '\n
+                            - Total Harga: Rp ' . $request->total_price . '\n\n
+                            Periode Rental:\n
+                            - Mulai Rental: ' . $request->rental_start . '\n
+                            - Akhir Rental: ' . $request->rental_end . '\n\n
+                            Untuk melanjutkan, silakan melakukan pembayaran sejumlah Rp ' . $request->total_price . ' ke rekening Dana berikut:\n
+                            082180918098 (a.n Renturstyle)\n\n
+                            Setelah pembayaran diterima, kami akan segera memproses pesanan Anda.\n\n
+                            Terima kasih!',
             'countryCode' => '62' // optional, bisa disesuaikan jika perlu
         ];
 
