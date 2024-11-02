@@ -11,10 +11,7 @@ use Validator;
 
 class OrderController extends Controller
 {
-    public function sendMessage($target, $message)
-    {
-       
-    }
+ 
     public function index(){
         $user_id = auth()->user()->id;
         $orders = Order::where('user_id', $user_id)->get();
@@ -64,7 +61,7 @@ Periode Rental:
 - Akhir Rental: ' . $request->rental_end . '
 
 Untuk melanjutkan, silakan melakukan pembayaran sejumlah *Rp.' . $request->total_price . '* ke rekening Dana berikut:
-    *082180918098 (a.n Renturstyle)*
+*082180918098 (a.n Renturstyle)*
 
 Setelah pembayaran diterima, kami akan segera memproses pesanan Anda.
 Terima kasih!',
