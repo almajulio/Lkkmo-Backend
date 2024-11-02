@@ -10,6 +10,10 @@ use Validator;
 
 class OrderController extends Controller
 {
+    public function sendMessage($target, $message)
+    {
+       
+    }
     public function index(){
         $user_id = auth()->user()->id;
         $orders = Order::where('user_id', $user_id)->get();
@@ -35,6 +39,42 @@ class OrderController extends Controller
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
+
+        $url = 'https://api.fonnte.com/send';
+        $token = '2TQsabhhruZyHNz17PRt'; // Ganti dengan token Anda
+
+        // Inisialisasi cURL
+        $curl = curl_init();
+
+        // Mengatur opsi cURL
+        $postData = [
+            'target' => '082379198888',
+            'message' => 'anda memesan barang',
+            'countryCode' => '62' // optional, bisa disesuaikan jika perlu
+        ];
+
+        // Mengatur opsi
+        curl_setopt_array($curl, [
+            CURLOPT_URL => $url,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_ENCODING => '',
+            CURLOPT_MAXREDIRS => 10,
+            CURLOPT_TIMEOUT => 0,
+            CURLOPT_FOLLOWLOCATION => true,
+            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+            CURLOPT_CUSTOMREQUEST => 'POST',
+            CURLOPT_POSTFIELDS => $postData,
+            CURLOPT_HTTPHEADER => [
+                "Authorization: $token",
+            ],
+        ]);
+
+        // Eksekusi cURL dan ambil respons
+        $response = curl_exec($curl);
+
+        // Tutup cURL
+        curl_close($curl);
+
 
         Order::create([
             'user_id' => auth()->user()->id,
@@ -86,4 +126,6 @@ class OrderController extends Controller
         }
         return new PostResource('401', "Anda Tidak Memiliki Akses");
     }
+
+
 }
