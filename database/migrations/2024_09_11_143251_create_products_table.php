@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->text("description");
-            $table->decimal("price");
+            $table->decimal("price", 15);
             $table->foreignId("category_id");
             $table->foreignId("subcategory_id");
             $table->integer("stock");
