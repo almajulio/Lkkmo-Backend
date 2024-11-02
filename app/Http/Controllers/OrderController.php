@@ -12,7 +12,7 @@ class OrderController extends Controller
 {
     public function index(){
         $user_id = auth()->user()->id;
-        $orders = Order::where('user_id', $user_id)->get();
+        $orders = Order::where('user_id', $user_id)->where('status', 'Belum')->get();
         return new PostResource('200', "Berhasil mengambil data order", $orders);
     }
 
