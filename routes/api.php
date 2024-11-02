@@ -30,8 +30,9 @@ Route::prefix('v1')->group(function () {
     
         // Api for order
         Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
-        Route::get('/orders/history', [OrderController::class, 'getHistory']);
+        Route::put('/orders/{id}', [OrderController::class, 'update'])->name('orders.update');
         Route::post('/orders', [OrderController::class, 'store'])->name('orders.store');
+        Route::delete('/orders/{id}', [OrderController::class, 'delete'])->name('orders.delete');
         
         // Api for review
         Route::post('/review', [ReviewController::class, 'store']);
@@ -68,11 +69,8 @@ Route::prefix('v1')->group(function () {
             Route::delete('/subcategories/{id}', [SubcategoryController::class, 'destroy'])->name('subcategories.destroy');
             
             // Admin api for order
-            Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
+            Route::get('/ordersall', [OrderController::class, 'getAll'])->name('orders.getall');
             
-            // Admin api for order
-            Route::put('/orders/{id}', [CategoryController::class, 'update'])->name('orders.update');
-            Route::delete('/orders/{id}', [CategoryController::class, 'destroy'])->name('orders.destroy');
 
             // Admin api for user management
             Route::get('/users', [UserController::class, 'index']);

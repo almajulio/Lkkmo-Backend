@@ -12,14 +12,13 @@ class OrderController extends Controller
 {
     public function index(){
         $user_id = auth()->user()->id;
-        $orders = Order::where('user_id', $user_id)->where('status', 'Belum')->get();
+        $orders = Order::where('user_id', $user_id)->get();
         return new PostResource('200', "Berhasil mengambil data order", $orders);
     }
 
-    public function getHistory(){
-        $user_id = auth()->user()->id;
-        $orders = Order::where('user_id', $user_id)->where('status', 'Selesai')->get();
-        return new PostResource('200', "Berhasil mengambil history", $orders);
+    public function getAll(){
+        $orders = Order::all();
+        return new PostResource('200', "Berhasil mengambil semua data order", $orders);
     }
 
     public function store(Request $request){
@@ -61,16 +60,20 @@ class OrderController extends Controller
         if(!$order){
             return new PostResource('404', "Order Tidak Ditemukan", $order);
         }
-        $order->update([
-            'user_id' => $request->user_id,
-            'quantity' => $request->quantity,
-            'product_id' => $request->product_id,
-            'rental_start' => $request->rental_start,
-            'rental_end' => $request->rental_end,
-            'total_price' => $request->total_price,
-            'status' => $request->status
-        ]);
-        return new PostResource('200', "Berhasil Mengupdate Order", $order);
+
+        if(auth()->user()->id == $order->user_id || auth()->user()->role == 'admin'){
+            $order->update([
+                'user_id' => $request->user_id,
+                'quantity' => $request->quantity,
+                'product_id' => $request->product_id,
+                'rental_start' => $request->rental_start,
+                'rental_end' => $request->rental_end,
+                'total_price' => $request->total_price,
+                'status' => $request->status
+            ]);
+            return new PostResource('200', "Berhasil Mengupdate Order", $order);
+        }
+        return new PostResource('401', "Anda Tidak Memiliki Akses");
     }
 
     public function delete($id){
@@ -78,7 +81,10 @@ class OrderController extends Controller
         if(!$order){
             return new PostResource('404', "Order Tidak Ditemukan", $order);
         }
-        $order->delete();
-        return new PostResource('200', "Behasil Menghapus Order", $order);
+        if(auth()->user()->id == $order->user_id || auth()->user()->role == 'admin'){
+            $order->delete();
+            return new PostResource('200', "Behasil Menghapus Order", $order);
+        }
+        return new PostResource('401', "Anda Tidak Memiliki Akses");
     }
 }
