@@ -52,7 +52,7 @@ class OrderController extends Controller
         // Mengatur opsi cURL
         $postData = [
             'target' => '082379198888',
-            'message' => 'Halo '. $user->name . ',! Terima kasih telah memilih *Renturstyle* untuk kebutuhan rental Anda!
+            'message' => 'Halo '. $user->name . '! Terima kasih telah memilih *Renturstyle* untuk kebutuhan rental Anda!
 Berikut adalah detail pesanan Anda:
 - Nama Produk: ' . $produk->name . '
 - Ukuran: ' . $request->size . '
