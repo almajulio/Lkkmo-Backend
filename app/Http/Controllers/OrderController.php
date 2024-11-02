@@ -52,19 +52,19 @@ class OrderController extends Controller
         // Mengatur opsi cURL
         $postData = [
             'target' => '082379198888',
-            'message' => 'Halo '. $user->name . ',! Terima kasih telah memilih *Renturstyle* untuk kebutuhan rental Anda!\n\n
-                            Berikut adalah detail pesanan Anda:\n
-                            - Nama Produk: ' . $produk->name . '\n
-                            - Ukuran: ' . $request->size . '\n
-                            - Jumlah Pesanan: ' . $request->quantity . '\n
-                            - Total Harga: Rp ' . $request->total_price . '\n\n
-                            Periode Rental:\n
-                            - Mulai Rental: ' . $request->rental_start . '\n
-                            - Akhir Rental: ' . $request->rental_end . '\n\n
-                            Untuk melanjutkan, silakan melakukan pembayaran sejumlah Rp ' . $request->total_price . ' ke rekening Dana berikut:\n
-                            082180918098 (a.n Renturstyle)\n\n
-                            Setelah pembayaran diterima, kami akan segera memproses pesanan Anda.\n\n
-                            Terima kasih!',
+            'message' => 'Halo '. $user->name . ',! Terima kasih telah memilih *Renturstyle* untuk kebutuhan rental Anda!
+Berikut adalah detail pesanan Anda:
+- Nama Produk: ' . $produk->name . '
+- Ukuran: ' . $request->size . '
+- Jumlah Pesanan: ' . $request->quantity . '
+- Total Harga: Rp ' . $request->total_price . '
+Periode Rental:
+- Mulai Rental: ' . $request->rental_start . '
+                            - Akhir Rental: ' . $request->rental_end . '
+Untuk melanjutkan, silakan melakukan pembayaran sejumlah Rp ' . $request->total_price . ' ke rekening Dana berikut:
+082180918098 (a.n Renturstyle)
+Setelah pembayaran diterima, kami akan segera memproses pesanan Anda.
+Terima kasih!',
             'countryCode' => '62' // optional, bisa disesuaikan jika perlu
         ];
 
