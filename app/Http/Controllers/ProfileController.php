@@ -39,7 +39,6 @@ class ProfileController extends Controller
             $data['profile_photo_path'] = $image; // Add image path to data
         }
 
-        dd($data);
         // Update the user with the prepared data
         $user->update($data);
         return new PostResource('200', "Berhasil Mengupdate Profile", $user);
