@@ -19,7 +19,7 @@ Route::prefix('v1')->group(function () {
         
         // Api for product
         Route::get('/products', [ProductController::class, 'index'])->name('products.index');
-        Route::get('/products/search/{query}', [ProductController::class, 'index'])->name('products.index');
+        Route::get('/products/search/{query}', [ProductController::class, 'search'])->name('products.search');
         Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
         Route::get('/products/category/{category_id}', [ProductController::class, 'getByCategories'])->name('products.getbycategories');
         Route::get('/products/subcategory/{subcategory_id}', [ProductController::class, 'getBySubCategories'])->name('products.getbysubcategories');
