@@ -62,15 +62,7 @@ class OrderController extends Controller
         }
 
         if(auth()->user()->id == $order->user_id || auth()->user()->role == 'admin'){
-            $order->update([
-                'user_id' => $request->user_id,
-                'quantity' => $request->quantity,
-                'product_id' => $request->product_id,
-                'rental_start' => $request->rental_start,
-                'rental_end' => $request->rental_end,
-                'total_price' => $request->total_price,
-                'status' => $request->status
-            ]);
+            $order->update([$request->all()]);
             return new PostResource('200', "Berhasil Mengupdate Order", $order);
         }
         return new PostResource('401', "Anda Tidak Memiliki Akses");
