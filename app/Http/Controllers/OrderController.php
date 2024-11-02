@@ -17,7 +17,7 @@ class OrderController extends Controller
     }
 
     public function getAll(){
-        $orders = Order::all();
+        $orders = Order::with('user', 'product')->get();
         return new PostResource('200', "Berhasil mengambil semua data order", $orders);
     }
 
