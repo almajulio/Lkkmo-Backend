@@ -17,6 +17,18 @@ class ProductController extends Controller
         }
         return new PostResource('200', "Berhasil mengambil data produk", $products);
     }
+    public function search($query){
+        $products = Product::where('name', 'like', "%{$query}%")
+        ->orWhere('description', 'like', "%{$query}%")
+        ->orWhereHas('category', function($q) use ($query) {
+            $q->where('name', 'like', "%{$query}%");
+        })
+        ->get();
+        if(!$products){
+            return new PostResource('404', "Product Tidak Ditemukan", $products);
+        }
+        return new PostResource('200', "Berhasil mengambil data produk", $products);
+    }
     public function show($id){
         $products = Product::with('reviews')->find($id);
         if(!$products){

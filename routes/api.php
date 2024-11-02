@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\WishlistController;
@@ -10,6 +11,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 // Api for login
 Route::prefix('v1')->group(function () {
@@ -17,6 +19,7 @@ Route::prefix('v1')->group(function () {
         
         // Api for product
         Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+        Route::get('/products/search/{query}', [ProductController::class, 'index'])->name('products.index');
         Route::get('/products/{id}', [ProductController::class, 'show'])->name('products.show');
         Route::get('/products/category/{category_id}', [ProductController::class, 'getByCategories'])->name('products.getbycategories');
         Route::get('/products/subcategory/{subcategory_id}', [ProductController::class, 'getBySubCategories'])->name('products.getbysubcategories');
@@ -40,7 +43,11 @@ Route::prefix('v1')->group(function () {
     
         // Api for auth
         Route::post('/logout', [AuthController::class, 'logout']);
-    
+
+        // Api for profile
+        Route::get('/profile', [ProfileController::class, 'index']);
+        Route::put('/profile/update', [ProfileController::class, 'update']);
+
         // Api for admin
         Route::middleware('checkRole:admin')->group(function () {
             // Admin api for product
